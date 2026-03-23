@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: Inventory Management API | Full Stack Web Developer</title>
+    <meta name="description"
+        content="Technical case study detailing a high-throughput Inventory Management API built with NestJS, GraphQL, PostgreSQL, and Redis caching.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="case-study-page">
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo">Qamruzzaman<span>Khan</span></a>
+            <nav class="nav-links">
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="tech-stack.html">Tech Stack</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html" class="btn btn-primary btn-sm">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="cs-hero section">
+        <div class="container">
+            <a href="projects.html" class="back-link">&larr; Back to Projects</a>
+            <div class="grid items-center mt-8">
+                <div class="col-span-6">
+                    <div class="code-badge">&lt;CaseStudy /&gt;</div>
+                    <h1 class="cs-title">Logistics & Inventory API</h1>
+                    <p class="lead mt-8">Engineering a mission-critical backend service capable of sustaining high-throughput logistics routing and warehouse tracking.</p>
+                </div>
+                <div class="col-span-6">
+                    <div class="cs-hero-image">
+                        <!-- Code-themed decorative element -->
+                        <div class="browser-mockup">
+                            <div class="browser-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <div class="browser-body code-snippet">
+                                <pre><code><span class="keyword">@Get</span>(<span class="string">'stock/:sku'</span>)
+<span class="keyword">async</span> <span class="function">reserveStock</span>(@Param(<span class="string">'sku'</span>) sku: <span class="string">string</span>) {
+  <span class="keyword">return await</span> <span class="keyword">this</span>.inventory.<span class="function">calculate</span>(sku, {
+    lock: <span class="keyword">true</span>,
+    ttl: <span class="string">300</span>
+  });
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cs-content-wrapper">
+        <div class="container">
+            <div class="grid">
+
+                <!-- Main Content (8 cols) -->
+                <div class="col-span-8 cs-main">
+
+                    <!-- 1. Project Overview -->
+                    <section class="cs-section" id="overview">
+                        <h2>1. Project Overview</h2>
+                        <p>A multi-national 3PL (third-party logistics) provider required a complete rewrite of their aging order management backend. The previous monolith was suffering from severe race conditions during concurrent stock updates, leading to catastrophic warehouse desynchronization during peak holiday periods.</p>
+                    </section>
+
+                    <!-- 2. Problem Statement -->
+                    <section class="cs-section" id="problem">
+                        <h2>2. Technical Challenges</h2>
+                        <div class="problem-box">
+                            <p><strong>The API needed to solve foundational data integrity issues:</strong></p>
+                            <ul>
+                                <li><strong>Concurrency & Race Conditions:</strong> Preventing overselling when hundreds of client applications attempt to reserve the same SKU simultaneously.</li>
+                                <li><strong>Query Performance:</strong> Resolving heavily nested relational queries (Orders -> Shipments -> Warehouses -> Pallets).</li>
+                                <li><strong>System Interoperability:</strong> Creating a unified access layer that cleanly integrates with dozens of legacy external vendor APIs.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- 3. Solution Implemented -->
+                    <section class="cs-section" id="solution">
+                        <h2>3. Engineered Solution</h2>
+                        <p>I led the migration to a microservices-adjacent architecture powered by the NestJS framework. To solve the complex querying constraints, I implemented a GraphQL API using Apollo Server, allowing front-end teams to fetch precise nested trees of data without encountering over-fetching typical of REST.</p>
+                        <p>To eliminate the crippling race conditions, I established strict ACID-compliant transaction boundaries within a deeply indexed PostgreSQL database. For highly contested, fast-moving SKUs, I introduced a distributed locking mechanism via Redis, reliably enforcing serial access to inventory decrements and completely halting accidental oversells.</p>
+                    </section>
+
+                    <!-- 5. Screenshots -->
+                    <section class="cs-section" id="screenshots">
+                        <h2>5. Implementation Screenshots</h2>
+                        <div class="grid mt-8 gap-3">
+                            <div class="col-span-12 cs-placeholder cs-placeholder-lg">
+                                Dashboard View Placeholder
+                            </div>
+                            <div class="col-span-6 cs-placeholder cs-placeholder-md">
+                                Checkout Flow Placeholder
+                            </div>
+                            <div class="col-span-6 cs-placeholder cs-placeholder-md">
+                                Automation Settings Placeholder
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 6. Results -->
+                    <section class="cs-section" id="results">
+                        <h2>4. Project Results</h2>
+
+                        <div class="grid mt-8 gap-2">
+                            <div class="col-span-6 feature-card">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg" class="feature-icon-small">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h4 class="feature-title-small">GraphQL Federation</h4>
+                                    <p>Provided a unified aggregate graph, drastically simplifying frontend data fetching logic.</p>
+                                </div>
+                            </div>
+                            <div class="col-span-6 feature-card">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg" class="feature-icon-small">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h4 class="feature-title-small">ACID Transactions</h4>
+                                    <p>Bulletproof PostgreSQL transacting preventing critical data corruption during multi-step order routing.</p>
+                                </div>
+                            </div>
+                            <div class="col-span-6 feature-card">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg" class="feature-icon-small">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h4 class="feature-title-small">Distributed Locking</h4>
+                                    <p>Implementation of Redis mutex locks to eliminate concurrent cart checkout overselling.</p>
+                                </div>
+                            </div>
+                            <div class="col-span-6 feature-card">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg" class="feature-icon-small">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h4 class="feature-title-small">Dockerized CI/CD</h4>
+                                    <p>Establishing robust containerization workflows ensuring 100% environment parity from dev to prod.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- Sidebar (4 cols) -->
+                <div class="col-span-4 cs-sidebar">
+                    <div class="sticky-wrapper">
+
+                        <!-- 4. Technology Stack -->
+                        <div class="card p-6 mb-8">
+                            <h3 class="mb-4 text-lg">Technology Stack</h3>
+                            <div class="tech-tags">
+                                <span class="tech-tag">NestJS</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">GraphQL</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">Redis</span>
+                            </div>
+                        </div>
+
+                        <div class="card p-6">
+                            <h3 class="mb-4 text-lg">Project Details</h3>
+                            <ul class="meta-list">
+                                <li><strong>Role:</strong> Lead Backend Engineer</li>
+                                <li><strong>Industry:</strong> Logistics & 3PL</li>
+                                <li><strong>Platform:</strong> Microservice API</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary mt-6 w-full">View API Docs</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. CTA -->
+    <section class="section">
+        <div class="container">
+            <div class="cta-section code-cta">
+                <div class="cta-content">
+                    <h2>Ready to build your next product?</h2>
+                    <p>Let's architect a solution designed for scale, speed, and reliability.</p>
+                    <div class="btn-group justify-center mt-8">
+                        <a href="contact.html" class="btn btn-primary">Start a Conversation</a>
+                        <a href="projects.html" class="btn btn-secondary cs-btn-return">Return to Portfolio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Developer Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Animation Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="animations.js"></script>
+
+</body>
+
+</html>

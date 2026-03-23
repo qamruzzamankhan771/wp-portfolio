@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Full Stack Web Developer</title>
+    <meta name="description"
+        content="Insights, tutorials, and technical articles on full stack development, WordPress, and scalable system architecture.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="blog-archive">
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo">Qamruzzaman<span>Khan</span></a>
+            <nav class="nav-links">
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="tech-stack.html">Tech Stack</a>
+                <a href="about.html">About</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="contact.html" class="btn btn-primary btn-sm">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Hero -->
+    <section class="section text-center pb-6 border-none">
+        <div class="container">
+            <span class="tag mb-4">Writing</span>
+            <h1 class="mb-6 h1">Technical Insights & Articles</h1>
+            <p class="lead mx-auto max-w-md color-muted">Thoughts, tutorials, and architectural deep-dives from my
+                experience building scalable web applications and WordPress solutions.</p>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="section pt-4">
+        <div class="container">
+
+            <!-- Category Filters -->
+            <div class="blog-filters mb-12 text-center">
+                <button class="filter-btn active">All Topics</button>
+                <button class="filter-btn">WooCommerce</button>
+                <button class="filter-btn">Next.js</button>
+                <button class="filter-btn">AWS Infrastructure</button>
+                <button class="filter-btn">WordPress Optimization</button>
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="grid">
+
+                <!-- Article 1 -->
+                <div class="col-span-4 card blog-card hover-lift img-zoom-container">
+                    <div class="blog-img blog-grad-1">
+                        <span class="blog-cat-badge">WooCommerce</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta mb-2">
+                            <span>Oct 12, 2026</span> &middot; <span>8 min read</span>
+                        </div>
+                        <h3 class="mb-3"><a href="#">How to Build a Scalable WooCommerce Store</a></h3>
+                        <p class="mb-4">An in-depth guide to architecting a WooCommerce environment capable of handling
+                            high traffic volumes, caching strategies, and database optimization.</p>
+                        <a href="#" class="read-more">Read Article &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="col-span-4 card blog-card hover-lift img-zoom-container">
+                    <div class="blog-img blog-grad-2">
+                        <span class="blog-cat-badge">Architecture</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta mb-2">
+                            <span>Sep 28, 2026</span> &middot; <span>6 min read</span>
+                        </div>
+                        <h3 class="mb-3"><a href="#">WordPress vs Custom Web Applications for Startups</a></h3>
+                        <p class="mb-4">A pragmatic comparison of when to leverage WordPress to hit the market quickly
+                            versus investing in a custom Node.js backend from day one.</p>
+                        <a href="#" class="read-more">Read Article &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="col-span-4 card blog-card hover-lift img-zoom-container">
+                    <div class="blog-img blog-grad-3">
+                        <span class="blog-cat-badge">Next.js</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta mb-2">
+                            <span>Sep 15, 2026</span> &middot; <span>10 min read</span>
+                        </div>
+                        <h3 class="mb-3"><a href="#">Headless CMS with Strapi and Next.js</a></h3>
+                        <p class="mb-4">Step-by-step tutorial on decoupling your content management using Strapi on the
+                            backend and rendering lighting-fast pages globally with Next.js.</p>
+                        <a href="#" class="read-more">Read Article &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="col-span-4 card blog-card hover-lift img-zoom-container">
+                    <div class="blog-img blog-grad-4">
+                        <span class="blog-cat-badge">AWS Infrastructure</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta mb-2">
+                            <span>Aug 22, 2026</span> &middot; <span>7 min read</span>
+                        </div>
+                        <h3 class="mb-3"><a href="#">How to Deploy Node.js Apps on AWS</a></h3>
+                        <p class="mb-4">Best practices for deploying robust Node.js applications into production using
+                            EC2, PM2 process management, and Nginx reverse proxies.</p>
+                        <a href="#" class="read-more">Read Article &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Article 5 -->
+                <div class="col-span-4 card blog-card hover-lift img-zoom-container">
+                    <div class="blog-img blog-grad-5">
+                        <span class="blog-cat-badge">WordPress Optimization</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta mb-2">
+                            <span>Aug 05, 2026</span> &middot; <span>5 min read</span>
+                        </div>
+                        <h3 class="mb-3"><a href="#">Performance Optimization for WordPress Websites</a></h3>
+                        <p class="mb-4">Actionable techniques to reduce TTFB, implement effective Redis object caching,
+                            and defer JavaScript to achieve a 95+ Core Web Vitals score.</p>
+                        <a href="#" class="read-more">Read Article &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Pagination (Mock) -->
+            <div class="pagination mt-12 text-center">
+                <a href="#" class="page-link active">1</a>
+                <a href="#" class="page-link">2</a>
+                <a href="#" class="page-link">3</a>
+                <a href="#" class="page-link">Next &rsaquo;</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Developer Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Animation Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="animations.js"></script>
+
+</body>
+
+</html>

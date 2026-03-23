@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: Enterprise Corporate Marketing Site | Full Stack Web Developer</title>
+    <meta name="description"
+        content="Technical case study detailing a high-converting, SEO-optimized corporate marketing site built with custom WordPress Gutenberg blocks and GSAP animations.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="case-study-page">
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo">Qamruzzaman<span>Khan</span></a>
+            <nav class="nav-links">
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="tech-stack.html">Tech Stack</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html" class="btn btn-primary btn-sm">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="cs-hero section">
+        <div class="container">
+            <a href="projects.html" class="back-link">&larr; Back to Projects</a>
+            <div class="grid items-center mt-8">
+                <div class="col-span-6">
+                    <div class="code-badge">&lt;CaseStudy /&gt;</div>
+                    <h1 class="cs-title">Corporate Marketing Platform</h1>
+                    <p class="lead mt-8">Developing a blazing-fast, editor-friendly corporate website using modern WordPress architecture and custom blocks.</p>
+                </div>
+                <div class="col-span-6">
+                    <div class="cs-hero-image">
+                        <!-- Code-themed decorative element -->
+                        <div class="browser-mockup">
+                            <div class="browser-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <div class="browser-body code-snippet">
+                                <pre><code><span class="function">gsap</span>.<span class="keyword">from</span>(<span class="string">".hero-content"</span>, {
+  duration: <span class="string">1.5</span>,
+  y: <span class="string">100</span>,
+  opacity: <span class="string">0</span>,
+  ease: <span class="string">"power4.out"</span>,
+  scrollTrigger: {
+    trigger: <span class="string">".hero-section"</span>,
+    start: <span class="string">"top 80%"</span>,
+  }
+});</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cs-content-wrapper">
+        <div class="container">
+            <div class="grid">
+
+                <!-- Main Content (8 cols) -->
+                <div class="col-span-8 cs-main">
+
+                    <!-- 1. Project Overview -->
+                    <section class="cs-section" id="overview">
+                        <h2>1. Project Overview</h2>
+                        <p>A leading enterprise software firm needed a complete overhaul of their marketing presence. The legacy site was constructed using an outdated visual builder that crippled page speed, harmed Core Web Vitals, and restricted the marketing team from launching new campaigns efficiently.</p>
+                    </section>
+
+                    <!-- 2. Problem Statement -->
+                    <section class="cs-section" id="problem">
+                        <h2>2. Technical Challenges</h2>
+                        <div class="problem-box">
+                            <p><strong>The project presented several complex engineering hurdles:</strong></p>
+                            <ul>
+                                <li><strong>Core Web Vitals:</strong> Overcoming massive cumulative layout shifts (CLS) and slow longest contentful paint (LCP) times affecting organic search rankings.</li>
+                                <li><strong>Editor Experience:</strong> Empowering non-technical marketing staff to build complex, branded landing pages without relying on developer intervention.</li>
+                                <li><strong>Rich Interactions:</strong> Implementing complex, scroll-linked animations across the site without degrading performance on lower-tier mobile devices.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- 3. Solution Implemented -->
+                    <section class="cs-section" id="solution">
+                        <h2>3. Engineered Solution</h2>
+                        <p>I abandoned heavy page builders and architected a custom WordPress theme extending the native Gutenberg Block Editor. I engineered over 20 custom React-based Gutenberg blocks, providing the marketing team with a strict, brand-compliant library of components they could assemble dynamically.</p>
+                        <p>To hit perfect 100/100 Lighthouse performance scores, I aggressively optimized asset delivery. CSS was modularized per-block, and complex animations were offloaded to GSAP (GreenSock) using native `requestAnimationFrame`, guaranteeing silky smooth 60fps scrolling while keeping the main thread free.</p>
+                    </section>
+
+                    <!-- 5. Screenshots -->
+                    <section class="cs-section" id="screenshots">
+                        <h2>5. Implementation Screenshots</h2>
+                        <div class="grid mt-8 gap-3">
+                            <div class="col-span-12 cs-placeholder cs-placeholder-lg">
+                                Dashboard View Placeholder
+                            </div>
+                            <div class="col-span-6 cs-placeholder cs-placeholder-md">
+                                Checkout Flow Placeholder
+                            </div>
+                            <div class="col-span-6 cs-placeholder cs-placeholder-md">
+                                Automation Settings Placeholder
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 6. Results -->
+                    <section class="cs-section" id="results">
+                        <h2>4. Project Results</h2>
+
+                        <div class="grid mt-8 gap-2">
+                            <div class="col-span-6 feature-card">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg" class="feature-icon-small">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h4 class="feature-title-small">Perfect Web Vitals</h4>
+                                    <p>Achieved 100/100 Lighthouse scores through aggressive asset splitting and critical CSS.</p>
+                                </div>
+                            </div>
+                            <div class="col-span-6 feature-card">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg" class="feature-icon-small">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h4 class="feature-title-small">Custom Gutenberg</h4>
+                                    <p>Developed a bespoke React block library allowing rapid, brand-safe page construction.</p>
+                                </div>
+                            </div>
+                            <div class="col-span-6 feature-card">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg" class="feature-icon-small">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h4 class="feature-title-small">60FPS Animations</h4>
+                                    <p>Leveraged GSAP ScrollTrigger for hardware-accelerated, performant scroll interactions.</p>
+                                </div>
+                            </div>
+                            <div class="col-span-6 feature-card">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg" class="feature-icon-small">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h4 class="feature-title-small">SEO Optimized</h4>
+                                    <p>Programmatic technical SEO implementations resulting in a 40% gain in organic traffic.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- Sidebar (4 cols) -->
+                <div class="col-span-4 cs-sidebar">
+                    <div class="sticky-wrapper">
+
+                        <!-- 4. Technology Stack -->
+                        <div class="card p-6 mb-8">
+                            <h3 class="mb-4 text-lg">Technology Stack</h3>
+                            <div class="tech-tags">
+                                <span class="tech-tag">WordPress Core</span>
+                                <span class="tech-tag">React.js</span>
+                                <span class="tech-tag">GSAP</span>
+                                <span class="tech-tag">SCSS Architecture</span>
+                                <span class="tech-tag">WP Engine</span>
+                            </div>
+                        </div>
+
+                        <div class="card p-6">
+                            <h3 class="mb-4 text-lg">Project Details</h3>
+                            <ul class="meta-list">
+                                <li><strong>Role:</strong> Front-End Architect</li>
+                                <li><strong>Industry:</strong> Enterprise SaaS</li>
+                                <li><strong>Platform:</strong> Marketing Website</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary mt-6 w-full">View Live Site</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. CTA -->
+    <section class="section">
+        <div class="container">
+            <div class="cta-section code-cta">
+                <div class="cta-content">
+                    <h2>Ready to build your next product?</h2>
+                    <p>Let's architect a solution designed for scale, speed, and reliability.</p>
+                    <div class="btn-group justify-center mt-8">
+                        <a href="contact.html" class="btn btn-primary">Start a Conversation</a>
+                        <a href="projects.html" class="btn btn-secondary cs-btn-return">Return to Portfolio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Developer Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Animation Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="animations.js"></script>
+
+</body>
+
+</html>
